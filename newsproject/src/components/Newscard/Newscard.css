@@ -1,0 +1,11 @@
+.newscard {
+  color: red;
+  display: flex;
+  flex-flow: column wrap;
+  border: solid black 1px;
+}
+
+.news-image {
+  width: 100px;
+  height: 100px;
+}
