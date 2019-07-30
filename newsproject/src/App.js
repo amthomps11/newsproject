@@ -18,67 +18,37 @@ import "./components/Newscard/Newscard.css";
 import Filterbar from "./components/Filterbar";
 import "./components/Filterbar/Filterbar.css";
 
+import Topnews from "./components/Topnews";
+// import Filternews from "./components/Filternews";
+import Searchnews from "./components/Searchnews";
+
+import { Route, Link } from "react-router-dom";
+
 const TOKEN = process.env.REACT_APP_API_KEY;
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = { articles: [], currentQuery: "" };
-  }
+function App() {
+  return (
+    <div className="app-container">
+      <Header />
+      <div className="viewnav-bar">
+        <Link activeClassName="active" to="/topnews/">
+          Top News
+        </Link>
 
-  getCall = async () => {
-    axios
-      .get(
-        `https://newsapi.org/v2/everything?q=${
-          this.state.currentQuery
-        }&apiKey=${TOKEN}`
-      )
-      .then(res => {
-        this.setState(prevState => ({
-          articles: [...res.data.articles]
-        }));
-      });
-  };
+        <Link activeClassName="active" to="/search/">
+          Search
+        </Link>
 
-  handleClick = e => {
-    e.preventDefault();
-    this.getCall();
-    this.renderItems();
-  };
-
-  handleChange = e => {
-    e.preventDefault();
-    this.setState({ currentQuery: e.target.value });
-  };
-
-  renderItems = () => {
-    return this.state.articles.map((article, index) => {
-      console.log(article);
-      return (
-        <Newscard
-          key={index}
-          imgURL={article.urlToImage}
-          title={article.title}
-        />
-      );
-    });
-  };
-
-  render() {
-    console.log(SOURCES);
-    return (
-      <div className="app-container">
-        <Header />
-        <Searchbar
-          value={this.state.currentQuery}
-          handleChange={this.handleChange}
-          handleClick={this.handleClick}
-        />
-        <Filterbar />
-        <div className="news-wrapper">{this.renderItems()}</div>
+        <Link activeClassName="active" to="/favorites/">
+          Favorites
+        </Link>
       </div>
-    );
-  }
+
+      <Route path="/topnews/" component={Topnews} />
+      <Route path="/search/" component={Searchnews} />
+      {/* <Route path="/favorites/" component={Filternews} /> */}
+    </div>
+  );
 }
 
 export default App;
