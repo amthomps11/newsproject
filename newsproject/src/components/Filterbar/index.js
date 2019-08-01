@@ -33,7 +33,7 @@ class Filterbar extends React.Component {
 
   handleClick = () => {
     if (this.state.sources === true) {
-      // console.log("hi");
+      console.log("hi");
       this.setState({
         listOfSources: [...this.state.listOfSources, this.state.currentInput]
       });
