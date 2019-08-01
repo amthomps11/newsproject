@@ -6,6 +6,7 @@ function Searchbar(props) {
       <input
         type="text"
         value={props.value}
+        placeholder="Search Here..."
         onChange={props.handleChange}
         className="search-input"
       />
@@ -14,7 +15,7 @@ function Searchbar(props) {
         type="submit"
         className="search-button"
       >
-        search
+        <i class="fa fa-search fa-2x" />
       </button>
     </div>
   );

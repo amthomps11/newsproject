@@ -2,6 +2,8 @@ body {
   padding-top: 0px;
   background-color: #f1f1f1;
   font-family: "Roboto", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .app-container {
@@ -19,42 +21,68 @@ body {
   justify-content: center;
 }
 
+.news-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .viewnav-bar {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   color: white;
   height: 50px;
   padding: 6px;
   width: 100%;
   background-color: black;
-  /* opacity: 0.8; */
   margin-top: 0px;
 }
 
 .viewnav-bar a {
-  /* margin: 10px; */
   text-decoration: none;
   color: white;
   margin: 5px;
   font-size: 32px;
   padding-bottom: 3px;
-  /* animation: fadeOut 0.2s linear; */
+  width: 48%;
+  text-align: center;
 }
 
-.viewnav-bar a:visited {
-  text-decoration: none;
-}
-
-a.active {
-  /* color: #164975; */
-  padding-bottom: 0px;
+.viewnav-bar a:hover {
   border-bottom: solid white 3px;
+  transition: 0.1s;
+  padding-bottom: 0px;
 }
 
-.news-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.viewnav-bar .active {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border-bottom: solid white 3px;
+  padding-bottom: 0px;
+  transition: 0.1s;
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: black;
+    color: white;
+  }
+  to {
+    background-color: white;
+    color: black;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background-color: white;
+    color: black;
+  }
+  to {
+    background-color: black;
+    color: white;
+  }
 }
