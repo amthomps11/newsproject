@@ -1,0 +1,23 @@
+.entire-filter-bar-wrapper {
+  border: solid red 1px;
+}
+
+.filterbar {
+  border: solid blue 1px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.filterbar li {
+  width: 100px;
+}
+
+li:hover {
+  color: red;
+}
+
+.source-topic-bar {
+  border: solid green 1px;
+}

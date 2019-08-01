@@ -1,3 +1,7 @@
+body {
+  /* background-color: #f1f1f1; */
+}
+
 .app-container {
   /* position: absolute; */
   display: flex;
@@ -11,5 +15,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* position: absolute; */
+}
+
+.viewnav-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  height: 50px;
+  padding: 6px;
+}
+
+.viewnav-bar a {
+  /* margin: 10px; */
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+  /* animation: fadeOut 0.2s linear; */
+}
+
+.viewnav-bar a:visited {
+  text-decoration: none;
+}
+
+a.active {
+  color: #164975;
+}
+
+.news-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

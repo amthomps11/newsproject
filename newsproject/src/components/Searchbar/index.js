@@ -2,7 +2,7 @@ import React from "react";
 
 function Searchbar(props) {
   return (
-    <div>
+    <div className="searchbar-wrapper">
       <input
         type="text"
         value={props.value}

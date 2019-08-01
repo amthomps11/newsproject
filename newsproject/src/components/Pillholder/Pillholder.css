@@ -1,0 +1,6 @@
+.pill-wrapper {
+  border: solid black 4px;
+  align-self: flex-start;
+  height: 50px;
+  margin-bottom: 4px;
+}

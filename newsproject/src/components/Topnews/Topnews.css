@@ -1,0 +1,4 @@
+.content-wrapper {
+  border: solid pink 1px;
+  display: flex;
+}

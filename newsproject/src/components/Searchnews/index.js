@@ -6,7 +6,7 @@ import axios from "axios";
 
 // import "./App.css";
 
-import Header from "../Header";
+// import Header from "../Header";
 import "../Header/Header.css";
 
 import Searchbar from "../Searchbar";
@@ -15,7 +15,7 @@ import "../Searchbar/Searchbar.css";
 import Newscard from "../Newscard";
 import "../Newscard/Newscard.css";
 
-import Filterbar from "../Filterbar";
+// import Filterbar from "../Filterbar";
 import "../Filterbar/Filterbar.css";
 
 const TOKEN = process.env.REACT_APP_API_KEY;
@@ -61,6 +61,8 @@ class Searchnews extends React.Component {
             imgURL={article.urlToImage}
             title={article.title}
             description={article.description}
+            source={article.source.name}
+            link={article.url}
           />
         </div>
       );
@@ -75,7 +77,6 @@ class Searchnews extends React.Component {
           handleChange={this.handleChange}
           handleClick={this.handleClick}
         />
-        <Filterbar />
         <div className="news-wrapper">{this.renderItems()}</div>
       </div>
     );

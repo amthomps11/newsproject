@@ -1,8 +1,40 @@
-.search-input {
+.searchbar-wrapper {
+  height: 32px;
+  padding: 0;
+  margin-bottom: 32px;
   border: solid black 1px;
 }
 
-.search-button:hover {
+.search-input {
+  background-color: #88aee1;
+  border: 0;
+  color: #f3eed9;
+  height: 100%;
+  width: 256px;
+  margin-right: 0;
+  -webkit-appearance: none;
+}
+
+.searchbar-wrapper button {
+  background-color: #88aee1;
+  padding: 0;
+  height: 100%;
+  margin-left: 0;
+  border: 0;
+  color: #f3eed9;
+}
+
+.searchbar-wrapper button:focus {
+  border: 0;
+}
+
+.searchbar-wrapper button:hover {
   color: white;
   background-color: black;
+}
+
+.searchbar-wrapper button:active {
+  color: white;
+  background-color: black;
+  border: 0;
 }
