@@ -6,7 +6,12 @@ function Pillholder(props) {
       {props.pills.map((pill, index) => {
         if (pill !== "") {
           return (
-            <button key={index} name={pill} onClick={props.handleRemoveFilter}>
+            <button
+              className="pill-button"
+              key={index}
+              name={pill}
+              onClick={props.handleRemoveFilter}
+            >
               {pill}
             </button>
           );

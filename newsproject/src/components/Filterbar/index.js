@@ -66,39 +66,43 @@ class Filterbar extends React.Component {
     return (
       <div>
         <div className="entire-filter-bar-wrapper">
-          <div>
+          <div className="filter-input-wrapper">
             <input
               onChange={this.handleInput}
               value={this.state.currentInput}
             />
-            <button onClick={this.handleClick}>Add filter</button>
+            <button onClick={this.handleClick}>+ Filter</button>
           </div>
           <ul className="filterbar">
             <li onClick={this.showSources}>Sources</li>
+            {this.state.sources ? (
+              <ul className="source-topic-bar">
+                <li name="cnn" onClick={this.props.handleFilter}>
+                  CNN
+                </li>
+                <li name="abc-news" onClick={this.props.handleFilter}>
+                  ABC
+                </li>
+                {this.renderAdditionalSources()}
+              </ul>
+            ) : (
+              false
+            )}
             <li onClick={this.showTopics}>Topics</li>
+            {this.state.topics ? (
+              <ul className="source-topic-bar">
+                <li value="Democrat" onClick={this.props.handleFilter}>
+                  Democrat
+                </li>
+                <li value="Debate" onClick={this.props.handleFilter}>
+                  Debate
+                </li>
+                {this.renderAdditionalTopics()}
+              </ul>
+            ) : (
+              false
+            )}
           </ul>
-
-          {this.state.sources ? (
-            <ul className="source-topic-bar">
-              <li name="cnn" onClick={this.props.handleFilter}>
-                CNN
-              </li>
-              <li name="abc-news" onClick={this.props.handleFilter}>
-                ABC
-              </li>
-              {this.renderAdditionalSources()}
-            </ul>
-          ) : (
-            <ul className="source-topic-bar">
-              <li value="Democrat" onClick={this.props.handleFilter}>
-                Democrat
-              </li>
-              <li value="Debate" onClick={this.props.handleFilter}>
-                Debate
-              </li>
-              {this.renderAdditionalTopics()}
-            </ul>
-          )}
         </div>
       </div>
     );

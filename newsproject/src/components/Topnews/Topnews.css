@@ -1,4 +1,9 @@
 .content-wrapper {
-  border: solid pink 1px;
   display: flex;
+}
+
+.filter-pill-holder {
+  position: sticky;
+  top: 64px;
+  height: 100%;
 }

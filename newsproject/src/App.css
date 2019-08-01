@@ -1,5 +1,7 @@
 body {
-  /* background-color: #f1f1f1; */
+  padding-top: 0px;
+  background-color: #f1f1f1;
+  font-family: "Roboto", sans-serif;
 }
 
 .app-container {
@@ -25,13 +27,19 @@ body {
   color: white;
   height: 50px;
   padding: 6px;
+  width: 100%;
+  background-color: black;
+  /* opacity: 0.8; */
+  margin-top: 0px;
 }
 
 .viewnav-bar a {
   /* margin: 10px; */
   text-decoration: none;
-  color: black;
+  color: white;
   margin: 5px;
+  font-size: 32px;
+  padding-bottom: 3px;
   /* animation: fadeOut 0.2s linear; */
 }
 
@@ -40,7 +48,9 @@ body {
 }
 
 a.active {
-  color: #164975;
+  /* color: #164975; */
+  padding-bottom: 0px;
+  border-bottom: solid white 3px;
 }
 
 .news-wrapper {
