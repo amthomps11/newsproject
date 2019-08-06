@@ -1,5 +1,7 @@
 # News Project
 http://newsproject.surge.sh/topnews/
+
+
 News app that lets you filter by sources and topics as well as search for specific sources
 
 ## Top News
