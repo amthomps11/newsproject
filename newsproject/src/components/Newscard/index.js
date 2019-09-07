@@ -19,9 +19,6 @@ function Newscard(props) {
       <div className="newscard-back">
         <p>{props.description}</p>
         <a href={props.link}>Link To Article</a>
-        <button onClick={props.handleFavorite} className="fav-button">
-          Favorite
-        </button>
       </div>
     </div>
   );

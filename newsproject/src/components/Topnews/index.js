@@ -2,14 +2,8 @@ import React from "react";
 
 import axios from "axios";
 
-// import SOURCES from "../src/sources.json";
-
-// import "./App.css";
-
-// import Header from "../Header";
 import "../Header/Header.css";
 
-// import Searchbar from "../Searchbar";
 import "../Searchbar/Searchbar.css";
 
 import Newscard from "../Newscard";
@@ -51,7 +45,6 @@ class Topnews extends React.Component {
     if (this.state.sources === [] && this.state.topics === []) {
       try {
         let url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=40&apiKey=${TOKEN}`;
-        console.log(url);
         const data = await axios.get(url);
         await this.setState({
           articles: [...data.data.articles]
@@ -61,10 +54,7 @@ class Topnews extends React.Component {
       }
     } else if (this.state.sources === [] && this.state.topics !== []) {
       try {
-        let url = `https://newsapi.org/v2/top-headlines?q=${
-          this.state.topics
-        }&pageSize=40&country=us&apiKey=${TOKEN}`;
-        console.log(url);
+        let url = `https://newsapi.org/v2/top-headlines?q=${this.state.topics}&pageSize=40&country=us&apiKey=${TOKEN}`;
         const data = await axios.get(url);
         await this.setState({
           articles: [...data.data.articles]
@@ -77,7 +67,6 @@ class Topnews extends React.Component {
         let url = `https://newsapi.org/v2/top-headlines?sources=${this.state.sources.join(
           ","
         )}&pageSize=40&apiKey=${TOKEN}`;
-        console.log(url);
         const data = await axios.get(url);
         await this.setState({
           articles: [...data.data.articles]
@@ -86,8 +75,6 @@ class Topnews extends React.Component {
         console.log(error);
       }
     } else if (this.state.sources !== [] && this.state.topics !== []) {
-      console.log(this.state.sources);
-      console.log(this.state.topics);
       try {
         let url = `https://newsapi.org/v2/top-headlines?sources=${this.state.sources.join(
           ","
@@ -98,9 +85,6 @@ class Topnews extends React.Component {
           articles: [...data.data.articles]
         });
       } catch (error) {
-        console.log(this.state.sources);
-        console.log(this.state.topics);
-
         console.log(error);
       }
     }
@@ -168,17 +152,15 @@ class Topnews extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="content-wrapper">
-          <div className="filter-pill-holder">
-            <Filterbar handleFilter={this.handleSetSource} />
-            <Pillholder
-              pills={this.state.sources.concat(this.state.topics)}
-              handleRemoveFilter={this.handleRemovefilter}
-            />
-          </div>
-          <div className="news-wrapper">{this.renderItems()}</div>
+      <div className="content-wrapper">
+        <div className="filter-pill-holder">
+          <Filterbar handleFilter={this.handleSetSource} />
+          <Pillholder
+            pills={this.state.sources.concat(this.state.topics)}
+            handleRemoveFilter={this.handleRemovefilter}
+          />
         </div>
+        <div className="news-wrapper">{this.renderItems()}</div>
       </div>
     );
   }
