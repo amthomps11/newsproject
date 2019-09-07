@@ -153,13 +153,13 @@ class Topnews extends React.Component {
   render() {
     return (
       <div className="content-wrapper">
-        <div className="filter-pill-holder">
+        {/* <div className="filter-pill-holder">
           <Filterbar handleFilter={this.handleSetSource} />
           <Pillholder
             pills={this.state.sources.concat(this.state.topics)}
             handleRemoveFilter={this.handleRemovefilter}
           />
-        </div>
+        </div> */}
         <div className="news-wrapper">{this.renderItems()}</div>
       </div>
     );

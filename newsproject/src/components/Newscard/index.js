@@ -7,9 +7,9 @@ function Newscard(props) {
     <div className="newscard-container">
       <div className="newscard-front">
         {props.imgURL ? (
-          <img className="news-image" src={props.imgURL} alt="fsadadsfasd" />
+          <img className="news-image" src={props.imgURL} alt="article image" />
         ) : (
-          <img className="news-image" src={tempImage} alt="fsadadsfasd" />
+          <img className="news-image" src={tempImage} alt="article image" />
         )}
         <p className="title">{props.title}</p>
 
@@ -18,7 +18,9 @@ function Newscard(props) {
 
       <div className="newscard-back">
         <p>{props.description}</p>
-        <a href={props.link}>Link To Article</a>
+        <a className="article-link" href={props.link}>
+          Link To Article
+        </a>
       </div>
     </div>
   );

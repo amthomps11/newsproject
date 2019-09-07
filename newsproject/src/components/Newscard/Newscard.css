@@ -3,12 +3,10 @@
 }
 .news-image {
   width: 100%;
-  /* height: 160px; */
   margin: 0px;
 }
 
 .news-wrapper {
-  /* border: solid black 1px; */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -27,7 +25,7 @@
 }
 
 .articles-container {
-  width: 100%;
+  /* width: 100%; */
   /* border: solid green 1px; */
 }
 
@@ -95,4 +93,18 @@
 
 .source {
   border-top: solid black 1px;
+}
+
+.newscard-back a {
+  border-top: solid black 1px;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 8px;
+  transition: 0.4s;
+}
+
+.newscard-back a:hover {
+  text-decoration: none;
+  color: red;
+  margin-bottom: 8px;
 }
